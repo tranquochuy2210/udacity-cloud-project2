@@ -1,0 +1,40 @@
+{
+  "name": "udacity-c2-image-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "engines": {
+    "node": "14.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf www\\",
+    "build": "npm run clean && tsc && copy package.json www\\package.json && mkdir www\\tmp\\ && cd www && powershell \"Compress-Archive . Archive.zip\" && cd ..",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "start": "node ./www/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grutt/udacity-c2-image-filter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grutt/udacity-c2-image-filter/issues"
+  },
+  "homepage": "https://github.com/grutt/udacity-c2-image-filter#readme",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.33",
+    "@types/express": "^4.17.0",
+    "@types/node": "^11.13.17",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "latest",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "express": "latest",
+    "jimp": "latest",
+    "lodash": "^4.17.15"
+  }
+}
